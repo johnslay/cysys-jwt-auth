@@ -1119,7 +1119,6 @@ describe('API Tests', () => {
                     expect(res.body.message).to.equal('Authentication Failed');
                     done();
                 });
-
         });
 
         it("Post Fails with No User", function (done) {
