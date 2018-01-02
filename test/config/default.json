@@ -1,0 +1,68 @@
+{
+  "ServerInfo": {
+    "port": 5556,
+    "loggingPath": "./test/logs",
+    "loggingLevel": "debug",
+    "logName": "app.log"
+  },
+  "Databases": {
+    "authDB": "./test/data/auth_db",
+    "trustedDB": "./test/data/trusted.db",
+    "configDB": "./test/data/config.db",
+    "refreshTokenDB": "./test/data/refresh_token_db",
+    "accessTokenDB": "./test/data/access_token_db"
+  },
+  "JWT": {
+    "secret": "./cysys-ngt secret token",
+    "issuer": "https://narrowgatetech.com/",
+    "lifetime": "12h"
+  },
+  "APIKey": {
+    "lifetime": 365,
+    "required": false
+  },
+  "Controls": {
+    "Password": {
+      "minimumPasswordLength": 14,
+      "minimumAdminPasswordLength": 20,
+      "restrictAccountChanges": false,
+      "historyLength": 14,
+      "lockoutThreshold": 3,
+      "lockoutDuration": 15,
+      "resetLockoutCounter": 15,
+      "maxPasswordAge": 90,
+      "minPasswordAge": 1,
+      "passwordAttemptDelay": 1,
+      "PasswordComplexity": {
+        "upper": true,
+        "upperCount": 3,
+        "lower": true,
+        "lowerCount": 3,
+        "number": true,
+        "numberCount": 3,
+        "special": true,
+        "specialCount": 3,
+        "sequence": true,
+        "sequenceCount": 4,
+        "qwerty": true,
+        "qwertyCount": 3,
+        "pattern": true,
+        "dictionary": true,
+        "dfile": "./test/data/dict.txt",
+        "username": true
+      }
+    },
+    "Audit": {
+      "failedLogins": true,
+      "successfulLogins": true,
+      "passwordChanges": true,
+      "accountOperations": true,
+      "tokenRefreshSuccess": false,
+      "tokenRefreshFail": true,
+      "claimRequestLogging": true,
+      "logSizeMB": 100,
+      "logWrap": true,
+      "auditLog": "/audit.log"
+    }
+  }
+}
